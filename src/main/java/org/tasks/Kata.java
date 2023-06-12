@@ -14,7 +14,7 @@ public class Kata {
 	public static boolean betterThanAverage(int[] classPoints, int yourPoints) {
 		long sum = yourPoints;
 
-		for (int point : classPoints){
+		for (int point : classPoints) {
 			sum += point;
 		}
 
@@ -29,4 +29,27 @@ public class Kata {
 		// 3 realization
 		// IntStream.of(classPoints).average().getAsDouble() < yourPoints;
 	}
+
+	public static Object[] removeEveryOther(Object[] arr) {
+		if (arr == null) {
+			return null;
+		} else if (arr.length == 0) {
+			return new Object[] {};
+		}
+
+		int size = arr.length - (arr.length / 2);
+		Object[] result = new Object[size];
+
+		for (int i = 0; i < arr.length; i += 2) {
+			result[i / 2] = arr[i];
+		}
+
+		return result;
+
+		// 1 realization
+		// iterate(0, i -> i < arr.length, i -> i + 2).map(i -> arr[i]).toArray();
+		// 2 realization
+		// IntStream.range(0, arr.length).filter(n -> n % 2 == 0).mapToObj(i->arr[i]).toArray();
+	}
+
 }
