@@ -59,4 +59,8 @@ public class Kata {
 		return name.equals(owner) ? "Hello boss" : "Hello guest";
 	}
 
+	public static boolean zeroFuel(double distanceToPump, double mpg, double fuelLeft) {
+		return distanceToPump <= mpg * fuelLeft;
+	}
+
 }

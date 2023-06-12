@@ -47,5 +47,10 @@ class KataTest {
 				"For inputs \"Greg\" and \"Daniel\"");
 	}
 
+	@Test
+	public void testSomething2() {
+		assertTrue(Kata.zeroFuel(50, 25, 2));
+		assertFalse(Kata.zeroFuel(100, 50, 1));
+	}
 
 }
