@@ -52,4 +52,11 @@ public class Kata {
 		// IntStream.range(0, arr.length).filter(n -> n % 2 == 0).mapToObj(i->arr[i]).toArray();
 	}
 
+	static String greet(String name, String owner) {
+		name = name.toLowerCase();
+		owner = owner.toLowerCase();
+
+		return name.equals(owner) ? "Hello boss" : "Hello guest";
+	}
+
 }
