@@ -63,4 +63,26 @@ public class Kata {
 		return distanceToPump <= mpg * fuelLeft;
 	}
 
+	public static boolean solution(String str, String ending) {
+		if (str == null || ending == null ||
+				ending.length() > str.length()) {
+			return false;
+		}
+
+		int strLastIndex = str.length() - 1,
+				endingLastIndex = ending.length() - 1;
+		for (int i = 0; i <= endingLastIndex; i++) {
+			if (ending.getBytes()[endingLastIndex - i] != str.getBytes()[strLastIndex - i]) {
+				return false;
+			}
+		}
+
+		return true;
+
+		// 1 realization
+		// str.endsWith(ending);
+		// 2 realization
+		// str.substring(str.length()-ending.length()).equals(ending)
+	}
+
 }
