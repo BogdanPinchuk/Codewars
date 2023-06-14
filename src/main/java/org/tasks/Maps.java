@@ -9,8 +9,13 @@ public class Maps {
 				.mapToInt(i -> i * 2)
 				.toArray();
 
+		// 1 realization
 //		return Arrays.stream(arr)
-//				.map(x -> x * 2)
+//				.map(i -> i * 2)
+//				.toArray();
+		// 2 realization
+//		return IntStream.of(arr)
+//				.map(i -> i * 2)
 //				.toArray();
 	}
 }

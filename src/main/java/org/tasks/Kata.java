@@ -9,6 +9,9 @@ public class Kata {
 		return new StringBuilder(str)
 				.reverse()
 				.toString();
+
+		// 1 realization
+		// StringUtils.reverse(str);
 	}
 
 	public static boolean betterThanAverage(int[] classPoints, int yourPoints) {
