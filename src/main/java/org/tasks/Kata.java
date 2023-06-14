@@ -85,4 +85,12 @@ public class Kata {
 		// str.substring(str.length()-ending.length()).equals(ending)
 	}
 
+	public static String numberToString(int num) {
+		return String.valueOf(num);
+
+		// 1 realization
+		// Integer.toString(num);
+		// 2 realization
+		// String.format("%d",num)
+	}
 }
