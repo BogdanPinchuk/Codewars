@@ -85,4 +85,11 @@ class KataTest {
 		assertEquals("999", Kata.numberToString(999));
 	}
 
+	@Test
+	public void findShort() {
+		assertEquals(3, Kata.findShort("bitcoin take over the world maybe who knows perhaps"));
+		assertEquals(3, Kata.findShort("turns out random test cases are easier than writing out basic ones"));
+		assertEquals(2, Kata.findShort("Let's travel abroad shall we"));
+	}
+
 }

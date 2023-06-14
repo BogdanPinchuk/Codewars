@@ -1,5 +1,7 @@
 package org.tasks;
 
+import java.util.Arrays;
+
 public class Kata {
 	public static String greet(String name) {
 		return String.format("Hello, %s how are you doing today?", name);
@@ -95,5 +97,28 @@ public class Kata {
 		// Integer.toString(num);
 		// 2 realization
 		// String.format("%d",num)
+	}
+
+	public static int findShort(String s) {
+		return Arrays.stream(s.split(" "))
+				.mapToInt(String::length)
+				.min()
+				.getAsInt();
+
+		// 1 realization
+//		Stream.of(s.split(" "))
+//				.mapToInt(String::length)
+//				.min()
+//				.getAsInt();
+		// 2 realization
+//		Arrays.stream(s.split(" "))
+//				.map(String::length)
+//				.min(Comparator.naturalOrder())
+//				.get();
+		// 3 realization
+//		List<Integer> words_len = Arrays.asList(words).stream().map(w -> w.length()).collect(Collectors.toList());
+//		return Collections.min(words_len);
+		// 4 realization
+		// Arrays.stream(s.split(" ")).sorted(Comparator.comparing(String::length)).findFirst().get().length();
 	}
 }
