@@ -3,122 +3,145 @@ package org.tasks;
 import java.util.Arrays;
 
 public class Kata {
-	public static String greet(String name) {
-		return String.format("Hello, %s how are you doing today?", name);
-	}
+    public static String greet(String name) {
+        return String.format("Hello, %s how are you doing today?", name);
+    }
 
-	public static String solution(String str) {
-		return new StringBuilder(str)
-				.reverse()
-				.toString();
+    public static String solution(String str) {
+        return new StringBuilder(str)
+                .reverse()
+                .toString();
 
-		// 1 realization
-		// StringUtils.reverse(str);
-	}
+        // 1 realization
+        // StringUtils.reverse(str);
+    }
 
-	public static boolean betterThanAverage(int[] classPoints, int yourPoints) {
-		long sum = yourPoints;
+    public static boolean betterThanAverage(int[] classPoints, int yourPoints) {
+        long sum = yourPoints;
 
-		for (int point : classPoints) {
-			sum += point;
-		}
+        for (int point : classPoints) {
+            sum += point;
+        }
 
-		double averagePoint = (double) sum / (classPoints.length + 1);
+        double averagePoint = (double) sum / (classPoints.length + 1);
 
-		return yourPoints > averagePoint;
+        return yourPoints > averagePoint;
 
-		// 1 realization
-		// Arrays.stream(classPoints).average().orElse(0) < yourPoints;
-		// 2 realization
-		// IntStream.of(classPoints).sum()/classPoints.length < yourPoints;
-		// 3 realization
-		// IntStream.of(classPoints).average().getAsDouble() < yourPoints;
-	}
+        // 1 realization
+        // Arrays.stream(classPoints).average().orElse(0) < yourPoints;
+        // 2 realization
+        // IntStream.of(classPoints).sum()/classPoints.length < yourPoints;
+        // 3 realization
+        // IntStream.of(classPoints).average().getAsDouble() < yourPoints;
+    }
 
-	public static Object[] removeEveryOther(Object[] arr) {
-		if (arr == null) {
-			return null;
-		} else if (arr.length == 0) {
-			return new Object[] {};
-		}
+    public static Object[] removeEveryOther(Object[] arr) {
+        if (arr == null) {
+            return null;
+        } else if (arr.length == 0) {
+            return new Object[]{};
+        }
 
-		int size = arr.length - (arr.length / 2);
-		Object[] result = new Object[size];
+        int size = arr.length - (arr.length / 2);
+        Object[] result = new Object[size];
 
-		for (int i = 0; i < arr.length; i += 2) {
-			result[i / 2] = arr[i];
-		}
+        for (int i = 0; i < arr.length; i += 2) {
+            result[i / 2] = arr[i];
+        }
 
-		return result;
+        return result;
 
-		// 1 realization
-		// iterate(0, i -> i < arr.length, i -> i + 2).map(i -> arr[i]).toArray();
-		// 2 realization
-		// IntStream.range(0, arr.length).filter(n -> n % 2 == 0).mapToObj(i->arr[i]).toArray();
-	}
+        // 1 realization
+        // iterate(0, i -> i < arr.length, i -> i + 2).map(i -> arr[i]).toArray();
+        // 2 realization
+        // IntStream.range(0, arr.length).filter(n -> n % 2 == 0).mapToObj(i->arr[i]).toArray();
+    }
 
-	static String greet(String name, String owner) {
-		name = name.toLowerCase();
-		owner = owner.toLowerCase();
+    static String greet(String name, String owner) {
+        name = name.toLowerCase();
+        owner = owner.toLowerCase();
 
-		return name.equals(owner) ? "Hello boss" : "Hello guest";
-	}
+        return name.equals(owner) ? "Hello boss" : "Hello guest";
+    }
 
-	public static boolean zeroFuel(double distanceToPump, double mpg, double fuelLeft) {
-		return distanceToPump <= mpg * fuelLeft;
-	}
+    public static boolean zeroFuel(double distanceToPump, double mpg, double fuelLeft) {
+        return distanceToPump <= mpg * fuelLeft;
+    }
 
-	public static boolean solution(String str, String ending) {
-		if (str == null || ending == null ||
-				ending.length() > str.length()) {
-			return false;
-		}
+    public static boolean solution(String str, String ending) {
+        if (str == null || ending == null ||
+                ending.length() > str.length()) {
+            return false;
+        }
 
-		int strLastIndex = str.length() - 1,
-				endingLastIndex = ending.length() - 1;
-		for (int i = 0; i <= endingLastIndex; i++) {
-			if (ending.getBytes()[endingLastIndex - i] != str.getBytes()[strLastIndex - i]) {
-				return false;
-			}
-		}
+        int strLastIndex = str.length() - 1,
+                endingLastIndex = ending.length() - 1;
+        for (int i = 0; i <= endingLastIndex; i++) {
+            if (ending.getBytes()[endingLastIndex - i] != str.getBytes()[strLastIndex - i]) {
+                return false;
+            }
+        }
 
-		return true;
+        return true;
 
-		// 1 realization
-		// str.endsWith(ending);
-		// 2 realization
-		// str.substring(str.length()-ending.length()).equals(ending)
-	}
+        // 1 realization
+        // str.endsWith(ending);
+        // 2 realization
+        // str.substring(str.length()-ending.length()).equals(ending)
+    }
 
-	public static String numberToString(int num) {
-		return String.valueOf(num);
+    public static String numberToString(int num) {
+        return String.valueOf(num);
 
-		// 1 realization
-		// Integer.toString(num);
-		// 2 realization
-		// String.format("%d",num)
-	}
+        // 1 realization
+        // Integer.toString(num);
+        // 2 realization
+        // String.format("%d",num)
+    }
 
-	public static int findShort(String s) {
-		return Arrays.stream(s.split(" "))
-				.mapToInt(String::length)
-				.min()
-				.getAsInt();
+    public static int findShort(String s) {
+        return Arrays.stream(s.split(" "))
+                .mapToInt(String::length)
+                .min()
+                .getAsInt();
 
-		// 1 realization
+        // 1 realization
 //		Stream.of(s.split(" "))
 //				.mapToInt(String::length)
 //				.min()
 //				.getAsInt();
-		// 2 realization
+        // 2 realization
 //		Arrays.stream(s.split(" "))
 //				.map(String::length)
 //				.min(Comparator.naturalOrder())
 //				.get();
-		// 3 realization
+        // 3 realization
 //		List<Integer> words_len = Arrays.asList(words).stream().map(w -> w.length()).collect(Collectors.toList());
 //		return Collections.min(words_len);
-		// 4 realization
-		// Arrays.stream(s.split(" ")).sorted(Comparator.comparing(String::length)).findFirst().get().length();
-	}
+        // 4 realization
+        // Arrays.stream(s.split(" ")).sorted(Comparator.comparing(String::length)).findFirst().get().length();
+    }
+
+    public static int[] countPositivesSumNegatives(int[] input) {
+        if (input == null || input.length == 0) {
+            return new int[]{};
+        }
+
+        int[] result = new int[2];
+
+        for (int value : input) {
+            if (value <= 0){
+                result[1] += value;
+            } else {
+                result[0]++;
+            }
+        }
+
+        return result;
+
+        // 1 realization
+        // int[] { (int)IntStream.of(input).filter(i->i>0).count(), IntStream.of(input).filter(i->i<0).sum() };
+        // 2 realization
+        // (int) Arrays.stream(input).filter(i -> i > 0).count(), (int) Arrays.stream(input).filter(i -> i < 0).sum()
+    }
 }
