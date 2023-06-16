@@ -13,7 +13,7 @@ public class Kata {
                 .toString();
 
         // 1 realization
-        // StringUtils.reverse(str);
+//         StringUtils.reverse(str);
     }
 
     public static boolean betterThanAverage(int[] classPoints, int yourPoints) {
@@ -143,5 +143,16 @@ public class Kata {
         // int[] { (int)IntStream.of(input).filter(i->i>0).count(), IntStream.of(input).filter(i->i<0).sum() };
         // 2 realization
         // (int) Arrays.stream(input).filter(i -> i > 0).count(), (int) Arrays.stream(input).filter(i -> i < 0).sum()
+    }
+
+    public static double find_average(int[] array){
+        return Arrays.stream(array).average().orElse(0.0);
+
+        // 1 realization
+        // IntStream.of(array).average().getAsDouble();
+        // 2 realization
+        // return IntStream.of(array).summaryStatistics().getAverage();
+        // 3 realization
+        // return (double)Arrays.stream(array).reduce((a,b) -> a + b).getAsInt() / array.length;
     }
 }

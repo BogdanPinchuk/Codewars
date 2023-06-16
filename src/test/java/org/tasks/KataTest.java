@@ -103,4 +103,11 @@ class KataTest {
 		assertArrayEquals(expectedResult, Kata.countPositivesSumNegatives(new int[] {0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14}));
 	}
 
+	@Test
+	public void testSomething0() {
+		final double DELTA = 1e-15;
+		assertEquals(1, Kata.find_average(new int[]{1,1,1}), DELTA);
+		assertEquals(2, Kata.find_average(new int[]{1, 2, 3}), DELTA);
+	}
+
 }
