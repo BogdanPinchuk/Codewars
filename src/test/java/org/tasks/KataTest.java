@@ -110,4 +110,9 @@ class KataTest {
 		assertEquals(2, Kata.find_average(new int[]{1, 2, 3}), DELTA);
 	}
 
+	@Test
+	public void test1() {
+		assertEquals(-42, Kata.makeNegative(42));
+	}
+
 }

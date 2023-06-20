@@ -155,4 +155,13 @@ public class Kata {
         // 3 realization
         // return (double)Arrays.stream(array).reduce((a,b) -> a + b).getAsInt() / array.length;
     }
+
+    public static int makeNegative(final int x) {
+        return -Math.abs(x);
+
+        // 1 realization
+        // int mask = (x >> 31);
+        //    return ~(mask ^ x + mask) + 1;
+    }
+
 }

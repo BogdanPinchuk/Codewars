@@ -21,4 +21,5 @@ class SmashWordsTest {
     public void validateOneWord() {
         assertEquals("Bilal", SmashWords.smash(new String[] {"Bilal"}));
     }
+
 }
