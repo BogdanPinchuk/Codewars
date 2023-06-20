@@ -130,7 +130,7 @@ public class Kata {
         int[] result = new int[2];
 
         for (int value : input) {
-            if (value <= 0){
+            if (value <= 0) {
                 result[1] += value;
             } else {
                 result[0]++;
@@ -145,7 +145,7 @@ public class Kata {
         // (int) Arrays.stream(input).filter(i -> i > 0).count(), (int) Arrays.stream(input).filter(i -> i < 0).sum()
     }
 
-    public static double find_average(int[] array){
+    public static double find_average(int[] array) {
         return Arrays.stream(array).average().orElse(0.0);
 
         // 1 realization
@@ -162,6 +162,19 @@ public class Kata {
         // 1 realization
         // int mask = (x >> 31);
         //    return ~(mask ^ x + mask) + 1;
+    }
+
+    public static int opposite(int number) {
+        return -number;
+
+        // 1 realization
+        // return Math.negateExact(number);
+        // 2 realization
+//        return (number ^ 0xFFFFFFFF) + 1;
+        // 3 realization
+        // return ~number+1;
+        // 4 realization
+//         return (number ^ -1) + 1;
     }
 
 }
