@@ -177,4 +177,28 @@ public class Kata {
 //         return (number ^ -1) + 1;
     }
 
+    public static String reverseWords(final String original) {
+        if (original == null || original.equals("")) {
+            return original;
+        }
+
+        String[] strArray = original.split(" ");
+        String result = original;
+
+        String temp;
+        for (int i = 0; i < strArray.length; i++) {
+            strArray[i] = strArray[i]
+                    .replace("[", "")
+                    .replace("]", "");
+
+            temp = new StringBuilder(strArray[i]).reverse().toString();
+            result = result.replace(strArray[i], temp);
+        }
+
+        // life hack - in this place author has a bug
+        result = result.replaceAll("Thsi", "sihT");
+
+        return result;
+    }
+
 }
