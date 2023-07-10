@@ -126,16 +126,25 @@ class KataTest {
 
 	@Test
 	public void exampleCases() {
-		assertEquals("...tulos   evah syawla [sihT  !elur   dedocodrah stset sihT modnar   sihT]   diova", Kata.reverseWords("solut...   have always [This  rule!   hardocoded tests This random   This]   avoid"));
-		assertEquals("solut...   have always [This  rule!   hardocoded tests This random   This]   avoid", Kata.reverseWords("...tulos   evah syawla [sihT  !elur   dedocodrah stset sihT modnar   sihT]   diova"));
-		assertEquals("solut...   have always [This  rule!   hardocoded tests This random   This]   avoid", Kata.reverseWords("...tulos   evah syawla [Thsi  !elur   dedocodrah stset Thsi modnar   Thsi]   diova"));
-
-		assertEquals("...  ot diova   esac   [sihT] syawla diova", Kata.reverseWords("...  to avoid   case   [This] always avoid"));
 		assertEquals("elbuod  [decapS]  sdrow", Kata.reverseWords("double  [Spaced]  words"));
+		assertEquals("sihT si", Kata.reverseWords("This is"));
+		assertEquals("sihT", Kata.reverseWords("This"));
+
+		assertEquals("!elur esac  !elur  .noitulos   a  si   ot  ataK stset  diova   sihT  ataK  ataK  esac  .noitulos ot sihT  esac ataK  diova  dedocodrah  !elur  .noitulos evah   .noitulos", Kata.reverseWords("rule! case  rule!  solution.   a  is   to  Kata tests  avoid   This  Kata  Kata  case  solution. to This  case Kata  avoid  hardocoded  rule!  solution. have   solution."));
+
 		assertEquals("ehT kciuq nworb xof spmuj revo eht yzal .god", Kata.reverseWords("The quick brown fox jumps over the lazy dog."));
 		assertEquals("elppa", Kata.reverseWords("apple"));
 		assertEquals("a b c d", Kata.reverseWords("a b c d"));
 		assertEquals("elbuod  decaps  sdrow", Kata.reverseWords("double  spaced  words"));
+	}
+
+	@Test
+	public void basicTests0() {
+		assertEquals(false, Kata.checkForFactor(7889, 5));
+		assertEquals(true, Kata.checkForFactor(10, 2));
+		assertEquals(true, Kata.checkForFactor(63, 7));
+		assertEquals(true, Kata.checkForFactor(2450, 5));
+		assertEquals(true, Kata.checkForFactor(24612, 3));
 	}
 
 }

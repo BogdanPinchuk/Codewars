@@ -1,6 +1,8 @@
 package org.tasks;
 
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Kata {
     public static String greet(String name) {
@@ -182,23 +184,27 @@ public class Kata {
             return original;
         }
 
-        String[] strArray = original.split(" ");
-        String result = original;
+        Pattern pattern = Pattern.compile("\\S+");
+        Matcher matcher = pattern.matcher(original.replaceAll("[\\[\\]]", " "));
+        char[] result = original.toCharArray();
 
-        String temp;
-        for (int i = 0; i < strArray.length; i++) {
-            strArray[i] = strArray[i]
-                    .replace("[", "")
-                    .replace("]", "");
-
-            temp = new StringBuilder(strArray[i]).reverse().toString();
-            result = result.replace(strArray[i], temp);
+        char[] temp;
+        String str;
+        int first;
+        StringBuilder builder;
+        while (matcher.find()) {
+            str = matcher.group();
+            first = matcher.start();
+            str = new StringBuilder(str).reverse().toString();
+            temp = str.toCharArray();
+            System.arraycopy(temp, 0, result, first, temp.length);
         }
 
-        // life hack - in this place author has a bug
-        result = result.replaceAll("Thsi", "sihT");
+        return String.valueOf(result);
+    }
 
-        return result;
+    public static boolean checkForFactor(int base, int factor) {
+        return (factor != 0) && (base / factor != 1) && (base % factor == 0);
     }
 
 }
